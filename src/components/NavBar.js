@@ -22,6 +22,7 @@ import App from './App';
 import Home from './Welcome';
 import Register from './Register';
 import Login from './Login';
+import Dashboard from './Dashboard'
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -59,6 +60,7 @@ export default class NavBar extends Component {
         <Route exact path="/" component={Home}/>
         <Route exact path="/Register" component={Register}/>
         <Route exact path="/Login" component={Login}/>
+        <Route exact path="/Dashboard" component={Dashboard}/>
 
       </div>
       </Router>

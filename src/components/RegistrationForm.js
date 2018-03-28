@@ -26,7 +26,7 @@ export default class RegistrationForm extends Component {
     e.preventDefault();
     this.props.userSignupRequest(this.state).then(
       () => {
-        this.props.history.push('/');
+        this.props.history.push('/Dashboard');
       })
   }
 
