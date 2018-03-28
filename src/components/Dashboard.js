@@ -37,7 +37,7 @@ constructor(props) {
 
       <div>
 
-          <h1><b>Welcome to the Admin Dashboard.</b></h1>
+          <h1 className="dashboard"><b>Welcome to the Admin Dashboard.</b></h1>
           <p/>
           <ListGroup>
           {userList}

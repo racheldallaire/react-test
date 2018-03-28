@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { ListGroup, ListGroupItem } from 'reactstrap';
+import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Badge, Button  } from 'reactstrap';
 import axios from 'axios';
 
 export default class Temp extends Component {
@@ -8,8 +8,15 @@ constructor(props) {
     this.state= {
       tickets: []
     }
-
+  this.onClick = this.onClick.bind(this);
 }
+
+  onClick(e) {
+    axios.post('http://104.131.15.9:3030/api/users/closeTicket')
+    .then(function (response) {
+      console.log(response)
+    })
+  }
 
   componentDidMount(e) {
     var self = this;
@@ -26,18 +33,26 @@ constructor(props) {
  render () {
 
   var ticketList = this.state.tickets.map((obj) => {
-
-                return <ListGroupItem className="person">
-                      <span className="name">{obj.header}</span>
-                      <span>{obj.description} {obj.status}</span>
+  if (obj.status = 'closed') {
+    return <ListGroupItem>
+                      <ListGroupItemHeading>{obj.header}</ListGroupItemHeading>
+                      <ListGroupItemText><Badge pill color='danger'>.</Badge>{obj.description}</ListGroupItemText>
                       </ListGroupItem>
+  } else if (obj.status = 'open') {
+    return <ListGroupItem>
+                      <ListGroupItemHeading>{obj.header}</ListGroupItemHeading>
+                      <ListGroupItemText><Badge pill color='success'>.</Badge>{obj.description}</ListGroupItemText>
+                      <Button className="trash" onClick={this.onClick}>🗑️</Button>
+                      </ListGroupItem>
+  }
+
         });
 
   return (
 
       <div>
 
-          <h1><b>Welcome to your Dashboard.</b></h1>
+          <h1 className="dashboard"><b>Welcome to your Dashboard.</b></h1>
           <p/>
           <ListGroup>
           {ticketList}

@@ -109,3 +109,25 @@ body, html {
   font-weight: 700;
   font-size: 1.5rem;
 }
+
+.badge-danger {
+  color: #dc3545;
+  margin-right: 20px;
+}
+
+.badge-success {
+  color: #28a745;
+  margin-right: 20px;
+}
+
+.dashboard {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.trash {
+  float: right;
+  background-color: transparent;
+  margin-top: -40px;
+}
