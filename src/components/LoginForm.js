@@ -58,7 +58,7 @@ render() {
             onChange={this.onChange}
             required />
         </Col>
-         <Button className="cool-button">Submit</Button>
+         <Button className="cool-button" style={{marginTop: "20px"}}>Submit</Button>
         </FormGroup>
       </Form>
 
