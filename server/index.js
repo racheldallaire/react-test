@@ -18,7 +18,9 @@ const knex = require('knex')({
     database : 'reacttest'
   }
 });
-// import users from './routes/users';
+
+import users from './routes/users';
+import auth from './routes/auth';
 
 const databaseRoutes  = express.Router();
 const app = express();
@@ -26,6 +28,9 @@ const app = express();
 app.use(webpackMiddleware(webpack(webpackConfig)));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use('http://104.131.15.9:3030/api/users/createDummyUser/', users);
+app.use('http://104.131.15.9:3030/api/users/checkDummyUser/', auth);
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, './index.html'));
