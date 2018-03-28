@@ -2,7 +2,7 @@ const { resolve } = require('path')
 
 module.exports = {
 
-  entry: `${__dirname}/client/index.js`,
+  entry: `${__dirname}/src/index.js`,
 
   output: {
     filename: 'bundle.js',
@@ -19,7 +19,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         use: [ 'babel-loader', ],
-        include: resolve(__dirname, 'client'),
+        include: resolve(__dirname, 'src'),
         exclude: /node_modules/
       },
         {

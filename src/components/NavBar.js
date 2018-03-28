@@ -18,7 +18,8 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 
-  import App from './App'
+import App from './App';
+import Home from './Welcome';
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -37,9 +38,9 @@ export default class NavBar extends Component {
   render() {
     return (
       <Router>
-      <div>
-        <Navbar color="faded" light expand="md">
-          <NavbarBrand href="/">rachelProfiling</NavbarBrand>
+      <div style={{height: '100%'}}>
+        <Navbar id="nav" light expand="md">
+          <NavbarBrand href="/">rachel_profiling</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -53,7 +54,7 @@ export default class NavBar extends Component {
           </Collapse>
         </Navbar>
 
-
+        <Route exact path="/" component={Home}/>
 
       </div>
       </Router>
