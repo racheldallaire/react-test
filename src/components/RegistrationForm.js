@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { Button, Col, Container, Form, FormGroup, Label, Input, InputGroup, InputGroupText, InputGroupAddon, FormText, Row } from 'reactstrap';
+import { browserHistory } from 'react-router-dom'
 
 export default class RegistrationForm extends Component {
   constructor(props) {
@@ -23,7 +24,10 @@ export default class RegistrationForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.userSignupRequest(this.state);
+    this.props.userSignupRequest(this.state).then(
+      () => {
+        this.props.history.push('/');
+      })
   }
 
 render() {

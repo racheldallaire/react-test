@@ -22,7 +22,7 @@ render() {
               <CardBody>
                 <CardTitle>register</CardTitle>
                 <CardText>
-                  <RegistrationForm userSignupRequest={userSignupRequest} />
+                  <RegistrationForm userSignupRequest={userSignupRequest} history={this.props.history}/>
                 </CardText>
               </CardBody>
             </Card>
@@ -34,7 +34,8 @@ render() {
 }
 
 Register.propTypes = {
-  userSignupRequest: PropTypes.func.isRequired
+  userSignupRequest: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
 }
 
 export default connect(null, { userSignupRequest })(Register);
