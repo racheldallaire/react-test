@@ -8,7 +8,8 @@ const Home = (props) => {
           <h1 className="bg-head"><b>Welcome.</b></h1>
 
           <p>
-            <Button className="home-button" color="secondary" href="/register">Get Started</Button>
+            <Button className="log-button" color="secondary" href="/login">Log In</Button>
+            <Button className="reg-button" color="secondary" href="/register">Get Started</Button>
           </p>
       </div>
     );
